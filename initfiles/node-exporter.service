@@ -1,0 +1,8 @@
+[Unit]
+Description=Node Exporter
+
+[Service]
+ExecStart=/usr/local/bin/node_exporter -collectors.enabled "conntrack,diskstats,entropy,filefd,filesystem,loadavg,meminfo,netdev,netstat,sockstat,stat,time,uname,vmstat,systemd,interrupts,ntp" -collector.systemd.private -collector.ntp.server 0.debian.pool.ntp.org
+
+[Install]
+WantedBy=default.target

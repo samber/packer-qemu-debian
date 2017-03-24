@@ -1,0 +1,12 @@
+[Unit]
+Description=cAdvisor
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+RestartSec=10
+ExecStart=/usr/local/bin/cadvisor -logtostderr -port 60100
+
+[Install]
+WantedBy=multi-user.target
