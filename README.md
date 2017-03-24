@@ -15,7 +15,7 @@ $ cd /tmp && unzip /tmp/packer.zip
 $ mv packer /usr/local/bin/packer
 
 # install virsh (qemu cli)
-$ brew install libvirt
+$ apt-get install libvirt
 
 # install qemu !
 $ apt-get install qemu-system
