@@ -8,11 +8,11 @@ tar zxf /tmp/node_exporter.tar.gz
 mv /tmp/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64/node_exporter /usr/local/bin/node_exporter
 rm -r /tmp/node_exporter.tar.gz /tmp/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64
 chmod +x /usr/local/bin/node_exporter
-cp /tmp/initfiles/node-exporter.service /etc/systemd/system/node-exporter.service
+cp /tmp/node-exporter.service /etc/systemd/system/node-exporter.service
 systemctl enable node-exporter
 
 # cadvisor
 curl -L -o /usr/local/bin/cadvisor https://github.com/google/cadvisor/releases/download/v${CADVISOR_VERSION}/cadvisor
 chmod +x /usr/local/bin/cadvisor
-cp /tmp/initfiles/cadvisor.service /etc/systemd/system/cadvisor.service
+cp /tmp/cadvisor.service /etc/systemd/system/cadvisor.service
 systemctl enable cadvisor

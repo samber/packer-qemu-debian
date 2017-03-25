@@ -7,7 +7,7 @@ Packer is a VM builder. Recipe are in ```debian8.json```.
 
 ```
 # install some stuff
-$ apt-get install tmux git unzip curl
+$ apt-get install tmux git unzip curl bridge-utils
 
 # install packer (image builder)
 $ curl -Ls -o /tmp/packer.zip https://releases.hashicorp.com/packer/0.12.3/packer_0.12.3_linux_amd64.zip
@@ -19,6 +19,8 @@ $ apt-get install libvirt
 
 # install qemu !
 $ apt-get install qemu-system
+
+# create a bridge to connect virtual machines to each other
 ```
 
 Please add your own ssh public keys to ```.authorized_keys2```.
@@ -35,7 +37,7 @@ $ export DISPLAY=0
 $ export PACKER_LOG=1
 
 # tmux for long running stuff on remote servers !
-$ tmux new -s packer
+$ tmux new
 [tmux] $ packer build debian8.json
 #
 #       { some logs }
